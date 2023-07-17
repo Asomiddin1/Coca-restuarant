@@ -76,8 +76,6 @@ const AdminPin = (e) => {
                         <button onClick={regAdmin} className='text-[15px] mt-6 py-[8px] rounded-[25px]  text-white  bg-[#FF5C00] w-full'>Unlock</button>
                         <p className='text-white text-center mt-[30px] '>Clock in / Clock out</p>
                     </div>
-
-
                 </div>
             </div>
         </div>
