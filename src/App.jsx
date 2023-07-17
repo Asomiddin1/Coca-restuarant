@@ -4,6 +4,7 @@ import Layout from "./layout/layout";
 import { useEffect } from "react";
 import AdminPin from "./components/admin/admin-pin/admin-pin";
 import Dashboard from "./components/dashboard/dashboard";
+import AdminDashboard from "./components/admin/admin-dashboard/adminDashboard";
 
 function App() {
   const navigate = useNavigate()
@@ -11,17 +12,22 @@ function App() {
     navigate('/login')
   } , [])
   return (
-    <div className="App">
+    <div className=" h-[100vh] w-full">
 
       <Routes>
         <Route path="/admin-page" element={<AdminPage />}/> 
+        <Route path="/admin-dashboard" element={<AdminDashboard />}/> 
+       
         <Route path="/admin-pin" element={<AdminPin />}/> 
         <Route path="/login" element={<Layout />}/> 
         <Route path="/" element={<Dashboard />}/> 
        
       </Routes>
+
+ 
     </div>
   );
 }
 
 export default App;
+

@@ -4,8 +4,15 @@ import { Context } from '../../context'
 const Modal = ({children}) => {
     const {state , dispatch } = useContext(Context) 
     const closeMenu = (e)=>{
-       if(e.target.className.includes('clmenu')){
-        dispatch({type:'SET_MODAL'})
+       if(e.target.className.includes('clmenu') ){
+
+        if(state.modal === false){
+      dispatch({type:'ADD_NOTE'})
+        }else if(state.addNote === false){
+               dispatch({type:'SET_MODAL' })
+        }
+   
+        
        }  
     }
   return (

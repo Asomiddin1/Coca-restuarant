@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import OrderDetails from './order-details'
 import { Context } from '../../context'
+import Modal from '../modals/modal'
 
 const InfoCustomer = () => {
   const [visa , setVisa ] = useState(false)
@@ -18,7 +19,7 @@ const InfoCustomer = () => {
     setVisa(prev => !prev)
   }
   return (
-    <div className='w-[320px] bor_left px-3'>
+    <div className='w-[320px]  md:block hidden h-[680px] overflow-auto sticky top-[75px] bor_left px-3'>
       <div className='flex pt-6 gap-10'>
         <button className='py-[6px] px-[50px] rounded-[20px] cust_buy '>Buy</button>
         <button className='text-[#a19999]'>Reservation</button>
@@ -60,7 +61,7 @@ const InfoCustomer = () => {
           setVisa(prev => !prev)
          }
       }} className={`tran visaa  ${visa ? 'fixed flex justify-end tran items-start top-0 bottom-0 right-0 left-0   bg-[#00000088]' :''}`}>
-        <div className={`w-[400px] h-[100vh] tran relative ${visa ?  'right-0' :'right-[-100%]'} bg-white`}>
+        <div className={`w-[400px] h-[100vh] tran relative ${visa ?  'right-0' :'right-[-120%]'} bg-white`}>
           <h1 className='text-[22px] pt-6 px-7 font-medium'>Order payment</h1>
           <p className='px-7'>Order #102</p>
 
@@ -145,6 +146,12 @@ const InfoCustomer = () => {
           </div>
         </div>
       </div>
+
+      {state.orderCon && <Modal>
+        <div>
+            ``
+        </div>
+        </Modal>}
     </div>
   )
 }

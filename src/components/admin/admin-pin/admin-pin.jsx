@@ -19,8 +19,8 @@ const AdminPin = (e) => {
     }
 
     const regAdmin = ()=>{
-      if(num == '1234'){
-        navigate('/')
+      if(num === '1234'){
+        navigate('/admin-dashboard')
       }
     }
     return (
