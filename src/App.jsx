@@ -12,18 +12,23 @@ function App() {
     navigate('/login')
   } , [])
   return (
-    <div className="App">
+    <div className=" h-[100vh] w-full">
 
       <Routes>
         <Route path="/admin-dashboard" element={<AdminDashboard/>}/> 
         <Route path="/admin-page" element={<AdminPage />}/> 
+        <Route path="/admin-dashboard" element={<AdminDashboard />}/> 
+       
         <Route path="/admin-pin" element={<AdminPin />}/> 
         <Route path="/login" element={<Layout />}/> 
         <Route path="/" element={<Dashboard />}/> 
        
       </Routes>
+
+ 
     </div>
   );
 }
 
 export default App;
+
