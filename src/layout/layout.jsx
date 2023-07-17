@@ -4,21 +4,21 @@ import { useNavigate } from 'react-router-dom'
 
 
 const Layout = () => {
-  const [name ,setName ] = useState('')
-  const [pass ,serPass ] = useState('')
+  const [name, setName] = useState('')
+  const [pass, serPass] = useState('')
   const navigate = useNavigate()
 
-  const registr = (e)=>{
+  const registr = (e) => {
     e.preventDefault()
-   if(name == 'a' && pass == '1'){
-   navigate('/admin-page')
-   }else{
-    navigate('/')
-   }
- 
-   }
+    if (name == 'a' && pass == '1') {
+      navigate('/admin-page')
+    } else {
+      navigate('/')
+    }
 
-   
+  }
+
+
   return (
     <div className='layout w-full h-full flex sm:justify-start justify-center items-center sm:pl-[10%] pl-0'>
 
@@ -38,31 +38,31 @@ const Layout = () => {
               <p className='text-[#606060]'>Username</p>
               <div className='input_layout flex gap-2 '>
                 <img className='layout_user' src={require('./user.png')} alt="" />
-               <input required className=' outline-none'  type="text" name="" onChange={(e)=>{
-                setName(e.target.value)
-               }} value={name} placeholder='Enter username' />
-             </div>
+                <input required className=' outline-none' type="text" name="" onChange={(e) => {
+                  setName(e.target.value)
+                }} value={name} placeholder='Enter username' />
+              </div>
             </label>
             <label>
               <p className='text-[#606060]'>Password</p>
               <div className='input_layout flex gap-2 '>
                 <img src={require('./lock-close.png')} alt="" />
-                <input required className=' outline-none' type="password" onChange={(e)=>{
-                serPass(e.target.value)
-               }} value={pass} placeholder='Enter password' />
+                <input required className=' outline-none' type="password" onChange={(e) => {
+                  serPass(e.target.value)
+                }} value={pass} placeholder='Enter password' />
               </div>
             </label>
             <p className='mt-3 text-[14px] font-semibold text-[#FF5C00]'>Forgot password?</p>
 
-            <button onClick={registr}  className='w-full bg-[#FF5C00] text-white mt-6 rounded-[20px] py-[7px]'>Running order</button>
+            <button onClick={registr} className='w-full bg-[#FF5C00] text-white mt-6 rounded-[20px] py-[7px]'>Running order</button>
           </form>
-    <p className='text-[#606060] text-[13px] text-center'>End user agreement</p>
+          <p className='text-[#606060] text-[13px] text-center'>End user agreement</p>
         </div>
       </div>
-     
 
-       
-        </div>
+
+
+    </div>
   )
 }
 

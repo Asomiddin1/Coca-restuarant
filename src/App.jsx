@@ -15,6 +15,7 @@ function App() {
     <div className=" h-[100vh] w-full">
 
       <Routes>
+        <Route path="/admin-dashboard" element={<AdminDashboard/>}/> 
         <Route path="/admin-page" element={<AdminPage />}/> 
         <Route path="/admin-dashboard" element={<AdminDashboard />}/> 
        

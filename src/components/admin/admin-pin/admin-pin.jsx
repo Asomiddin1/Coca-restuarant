@@ -3,25 +3,32 @@ import { useNavigate } from 'react-router-dom'
 
 const AdminPin = (e) => {
     const navigate = useNavigate()
-    const [num ,setNum] = useState('')
-    const numppp = (number)=>{
-   setNum(e => e + number) 
-     
+    const [num, setNum] = useState('')
+    const numppp = (number) => {
+        setNum(e => e + number)
+
     }
-  
-    const deletNum = ()=>{
-        setNum((e) =>{
-        
+
+    const deletNum = () => {
+        setNum((e) => {
+
         })
     }
-    const clearNum = ()=>{
+    const clearNum = () => {
         setNum('')
     }
 
+<<<<<<< HEAD
     const regAdmin = ()=>{
       if(num === '1234'){
         navigate('/admin-dashboard')
       }
+=======
+    const regAdmin = () => {
+        if (num == '1234') {
+            navigate('/admin-dashboard')
+        }
+>>>>>>> 1cca2453414c1e7dcbdecb0453f0da88c59a81c2
     }
     return (
         <div className='flex justify-center items-center h-full admin_images'>
@@ -35,39 +42,39 @@ const AdminPin = (e) => {
                 </div>
                 <div className='w-[300px]'>
                     <div className='py-6 flex justify-center'>
-                        <input className='text-white text-[22px] text-center outline-none bg-transparent' type="text"  value={num ? num :''}placeholder='Enter your PIN' />
+                        <input className='text-white text-[22px] text-center outline-none bg-transparent' type="text" value={num ? num : ''} placeholder='Enter your PIN' />
                     </div>
 
                     <div className='flex flex-wrap justify-center gap-[20px] w-[300px]  py-3'>
-                        <p onClick={()=>{
+                        <p onClick={() => {
                             numppp(1)
                         }} className='py-1 px-7 text-[20px] text-white num_btn  backdrop-blur '>1</p>
-                        <p onClick={()=>{
+                        <p onClick={() => {
                             numppp(2)
                         }} className='py-1 px-7 text-[20px] text-white num_btn backdrop-blur '>2</p>
-                        <p onClick={()=>{
+                        <p onClick={() => {
                             numppp(3)
                         }} className='py-1 px-7 text-[20px] text-white num_btn backdrop-blur '>3</p>
-                        <p onClick={()=>{
+                        <p onClick={() => {
                             numppp(4)
                         }} className='py-1 px-7 text-[20px] text-white num_btn backdrop-blur '>4</p>
-                        <p onClick={()=>{
+                        <p onClick={() => {
                             numppp(5)
                         }} className='py-1 px-7 text-[20px] text-white num_btn backdrop-blur '>5</p>
-                        <p onClick={()=>{
+                        <p onClick={() => {
                             numppp(6)
-                        }}  className='py-1 px-7 text-[20px] text-white num_btn backdrop-blur '>6</p>
-                        <p onClick={()=>{
+                        }} className='py-1 px-7 text-[20px] text-white num_btn backdrop-blur '>6</p>
+                        <p onClick={() => {
                             numppp(7)
                         }} className='py-1 px-7 text-[20px] text-white num_btn backdrop-blur '>7</p>
-                        <p onClick={()=>{
+                        <p onClick={() => {
                             numppp(8)
                         }} className='py-1 px-7 text-[20px] text-white num_btn backdrop-blur '>8</p>
-                        <p onClick={()=>{
+                        <p onClick={() => {
                             numppp(9)
                         }} className='py-1 px-7 text-[20px] text-white num_btn backdrop-blur '>9</p>
                         <p onClick={clearNum} className='py-1 px-7 text-[20px] text-white num_btn backdrop-blur '>C</p>
-                        <p onClick={()=>{
+                        <p onClick={() => {
                             numppp(0)
                         }} className='py-1 px-7 text-[20px] text-white num_btn backdrop-blur '>0</p>
                         <p onClick={deletNum} className='py-1 px-7 text-[20px] text-white num_btn backdrop-blur '>#</p>
@@ -77,7 +84,7 @@ const AdminPin = (e) => {
                         <p className='text-white text-center mt-[30px] '>Clock in / Clock out</p>
                     </div>
 
-                    
+
                 </div>
             </div>
         </div>
