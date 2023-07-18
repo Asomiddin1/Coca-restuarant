@@ -18,13 +18,19 @@ const AdminPin = (e) => {
         setNum('')
     }
 
+<<<<<<< HEAD
 
    
+=======
+>>>>>>> bf0273b8c0eacad499841e940537fe67b6cac529
     const regAdmin = () => {
         if (num === '1234') {
             navigate('/admin-dashboard')
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> bf0273b8c0eacad499841e940537fe67b6cac529
     }
     return (
         <div className='flex justify-center items-center h-full admin_images'>
@@ -79,8 +85,6 @@ const AdminPin = (e) => {
                         <button onClick={regAdmin} className='text-[15px] mt-6 py-[8px] rounded-[25px]  text-white  bg-[#FF5C00] w-full'>Unlock</button>
                         <p className='text-white text-center mt-[30px] '>Clock in / Clock out</p>
                     </div>
-
-
                 </div>
             </div>
         </div>
