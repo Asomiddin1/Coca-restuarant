@@ -18,10 +18,19 @@ const AdminPin = (e) => {
         setNum('')
     }
 
+<<<<<<< HEAD
+
+   
+=======
+>>>>>>> bf0273b8c0eacad499841e940537fe67b6cac529
     const regAdmin = () => {
         if (num === '1234') {
             navigate('/admin-dashboard')
         }
+<<<<<<< HEAD
+
+=======
+>>>>>>> bf0273b8c0eacad499841e940537fe67b6cac529
     }
     return (
         <div className='flex justify-center items-center h-full admin_images'>
