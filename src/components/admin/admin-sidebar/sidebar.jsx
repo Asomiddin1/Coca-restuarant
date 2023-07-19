@@ -149,7 +149,7 @@ const Sidebar = () => {
         setActiveCat(iconName.inside[0].text)
     }
     return (
-        <div className=' h-full  z-50 fixed flex'>
+        <div className=' h-full  z-50 fixed  hidden md:flex'>
             <div className="flex-col overflow-hidden md:overflow-auto justify-start items-start gap-4 flex bg-zinc-900 px-4 py-6 min-h-full">
                 {
                     date.map((icon, index, active) => {

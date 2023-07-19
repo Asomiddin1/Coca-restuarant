@@ -9,9 +9,9 @@ const AdminDashboard = () => {
   return (
     <div>
       <div className=""><Navbar /></div>
-      <div className="main  mt-[76px] flex justify-between">
+      <div className="main  mt-[76px] flex flex-1 justify-between">
         <Sidebar />
-        <div className={`main ${state.toggle ? ' ml-[310px]' : ' ml-[90px]'} w-full h-full z-10`}>
+        <div className={`main ${state.toggle ? ' md:ml-[310px]' : ' ml-0 md:ml-[90px]'} overflow-auto w-full h-full z-10`}>
           <Main />
         </div>
       </div>
