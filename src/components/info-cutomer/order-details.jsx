@@ -14,8 +14,8 @@ const OrderDetails = () => {
         <button className=''>-</button>
       </div>
       <p className='mx-[5px]'>1</p>
-      <div className='w-[30px] h-[29px] flex justify-center items-end rounded-full text-[22px] bg-[#a9a0a0]'>
-        <button className='w-[30px] bg-[black]  h-[29px] flex justify-center items-end rounded-full text-white'>+</button> </div>
+      <div className='w-[30px]  h-[29px] bg-[black] flex justify-center items-end rounded-full text-[22px] '>
+        <button className=' text-white pt-6'>+</button> </div>
     </div>
   </div>
   )

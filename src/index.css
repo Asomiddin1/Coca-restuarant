@@ -93,3 +93,51 @@ body {
 .tran {
   transition: all 0.3s;
 }
+.cust_scrol{
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.tran_cust{
+  transition:all 10s;
+}
+
+/* query */
+@media screen and (max-width:1460px) {
+  .right_sidebar{
+     display: none;
+  }
+  .buy_info{
+    display: block;
+  }
+  .dddd{
+    width: 85%;
+    display: inline-block;
+  }
+  .r_ress{
+    width: 100%;
+   justify-content: end;
+
+  }
+}
+@media screen and (max-width:1368px) {
+  .nnnn{
+    display: none !important;
+  }
+  .user_res{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:620px) {
+  .foods{
+    width: 150px;
+  }
+  .foods p{
+    font-size: 13px;
+  }
+  .r_ress{
+    width: 100%;
+    justify-content: center;
+  }
+ 
+}

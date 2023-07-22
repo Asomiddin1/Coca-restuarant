@@ -1,0 +1,27 @@
+[
+ {
+    "text":"Coffee",
+    "url":"fa-sharp fa-light fa-cup-togo",
+    "active":false
+ },
+ {
+    "text":"Baverages",
+    "url":"fa-sharp fa-light fa-cup-togo",
+    "active":false
+ },
+ {
+    "text":"Appetizer",
+    "url":"fa-sharp fa-light fa-cup-togo",
+    "active":false
+ }, 
+ {
+    "text":"Bread",
+    "url":"fa-sharp fa-light fa-cup-togo",
+    "active":false
+ },
+ {
+    "text":"Snack",
+    "url":"fa-sharp fa-light fa-cup-togo",
+    "active":false
+ }
+]
