@@ -231,10 +231,10 @@ const Dashboard = () => {
         </div>
       </Modal>}
 
-      {state.navig && <div className='bg-white h-[100vh]  fixed w-full flex flex-col items-center  top-0  '>
-        <h1 onClick={menus} className='text-end w-full pr-4'>X</h1>
+      {state.navig && <div className='bg-white h-[100vh]  absolute w-full flex flex-col items-center  top-0  '>
+        <h1 onClick={menus} className='text-end  cursor-pointer pr-4'>X</h1>
         <ul className='flex flex-col items-center gap-[30px] '>
-            <li className='flex  gap-2 items-center'><img src={require('./images/Vector 179.png')} alt="" /> <span className='  font-semibold text-[#ff5900]'>Home</span></li>
+            <li   className='flex  gap-2 items-center'><img src={require('./images/Vector 179.png')} alt="" /> <span className='  font-semibold text-[#ff5900]'>Home</span></li>
             <li onClick={addOrder} className='flex gap-2 items-center'><img src={require('./images/note.png')} alt="" /> <span className=' text-[#8b8b8b] hover:font-semibold'>Order</span></li>
             <li className='flex gap-2 items-center'><img src={require('./images/clock.png')} alt="" /> <span className=' text-[#8b8b8b] hover:font-semibold'>History</span></li>
             <li className='flex gap-2 items-center'><img src={require('./images/receipt.png')} alt="" /> <span className=' text-[#8b8b8b] hover:font-semibold'>Bills</span></li>
@@ -243,7 +243,7 @@ const Dashboard = () => {
                 setSselect(true)
               }} className='py-2 px-8 max-h-[40px] select_btn text-[#ff5900] rounded-[20px] bg-[#ff712432]'>Dinning option</button>
            
-            {select && <div className='absolute flex flex-col gap-[15px]  ml-[-50px] px-4 py-4 border border-solid rounded bg-[white] items-center'>
+            {select && <div className='absolute flex flex-col gap-[15px]  ml-[-50px] px-4 py-4 z-[9999] border border-solid rounded bg-[white]'>
             
             <div className='flex w-[250px] py-2 px-6 rounded-[15px] nav_dini'>
               <div className='flex gap-2 w-[50%] items-center'>
