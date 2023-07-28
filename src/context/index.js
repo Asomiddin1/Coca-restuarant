@@ -19,7 +19,7 @@ const reducer = (state = initinalValue, action) => {
       return { ...state, navig: !nav };
     case "ADD_NOTE":
       const as12 = state.addNote;
-      return { ...state, modal: !as12 };
+      return { ...state, addNote: !as12 };
     case "SET_MODAL":
       let asd = state.modal;
       return { ...state, modal: !asd };

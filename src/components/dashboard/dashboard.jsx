@@ -10,8 +10,12 @@ import { Context } from '../../context'
 const Dashboard = () => {
   const { state, dispatch } = useContext(Context)
   const [select, setSselect] = useState(false)
+  const [cust, setCust] = useState(false)
+  const [asd , setAsd] = useState(false)
+  const [search , setSearch] = useState(false)
 
-  console.log(state);
+
+ 
 
   const now = new Date
   const day = now.getDate()
@@ -25,14 +29,13 @@ const Dashboard = () => {
   const addOrder = () => {
     dispatch({ type: 'SET_MODAL' })
   }
-  const menus =()=>{
-    dispatch({ type: 'SET_NAV' })
-  }
   return (
     <div>
       <div className='flex sticky bg-white top-0 h-[10vh] items-center nav_dash'>
         <div className='pl-[30px] pr-1'>
-          <div onClick={menus} className='flex-col gap-[7px] flex justify-center items-center'>
+          <div onClick={()=>{
+            setAsd(prev => !prev)
+          }} className='flex-col gap-[7px] flex justify-center items-center'>
            <h1 className='w-[40px] rounded h-[5px] bg-[#ff5900]'></h1>
            <h1 className='w-[40px] rounded h-[5px] bg-[#ff5900]'></h1>
            <h1 className='w-[40px] rounded h-[5px] bg-[#ff5900]'></h1>
@@ -47,7 +50,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div>
-          <ul className='sm:flex hidden gap-[30px]'>
+          <ul className='sm:flex  nnnn hidden gap-[30px]'>
             <li className='flex gap-2 items-center'><img src={require('./images/Vector 179.png')} alt="" /> <span className='  font-semibold text-[#ff5900]'>Home</span></li>
             <li onClick={addOrder} className='flex gap-2 items-center'><img src={require('./images/note.png')} alt="" /> <span className=' text-[#8b8b8b] hover:font-semibold'>Order</span></li>
             <li className='flex gap-2 items-center'><img src={require('./images/clock.png')} alt="" /> <span className=' text-[#8b8b8b] hover:font-semibold'>History</span></li>
@@ -122,32 +125,50 @@ const Dashboard = () => {
           </ul>
 
         </div>
-        <div className='flex sm:flex-row flex-col items-center justify-end sm:pl-[100px] pl-6 gap-1 sm:gap-[20px]'>
+        <div className='flex user_res  px-4 justify-end items-center  pl-[60px]'>
+          <div className='flex sm:flex-row  sm:gap-[20px] gap-1 flex-col items-center justify-end'>
           <p>{hours}:{minut}:{secund}</p>
           <p> {day}/{moth}/{year}</p>
-         
-        </div>
+          </div>
         <img className='ml-4' width={50} src={require('../admin/admin-page/Screenshot_6.png')} alt="" />
+
+        </div>
       </div>
 
 
       <div className='flex'>
         <SidbarLeft />
         <div className='w-full '>
-          <div className='sticky top-[75px] bg-white'>
-          <div className='nav_dash'>
-            <p className='text-[#ff5900] px-4'>Dashboard/Food</p>
+          <div className='sticky top-[79px] bg-white'>
+          <div className='nav_dash w-full flex'>
+           <div className='flex dddd justify-start'> 
+           <p className='text-[rgb(255,89,0)]  px-4'>Dashboard/Food</p>
+           </div>
+            <div className=' flex  w-full pr-6 r_ress items-center justify-end'>
+               <p onClick={()=>{
+                setCust(prev =>!prev)
+               }} className='hidden buy_info text-end'><img src={require('./images/vvv.png')} alt="" /></p>
+            </div>
+           
           </div>
           <div>
             <div className='flex items-center px-4 nav_dash'>
-              <img src={require('./images/Ellipse 2832.png')} alt="" />
-              <input className='px-1 sm:block hidden outline-none py-2' type="text" placeholder='Search menu' />
+              <img onClick={()=>{
+                setSearch(prev =>!prev)
+              }} src={require('./images/Ellipse 2832.png')} alt="" />
+              <div className=' sm:block hidden'>
+                <input className={`px-1 w-full outline-none py-2`} type="text" placeholder='Search menu' />
+              </div>
+              <div className={`${search ? 'block':'hidden'}`}>
+              <input className={`px-1  w-full outline-none py-2`} type="text" placeholder='Search menu' />
+              </div>
+
               <div className='sm:pl-[100px] pl-2'>
                 <h1 className='h-[38px] bg-[#6e6969] w-[1px]'></h1>
               </div>
-              <ul className='flex w-full overflow-scroll px-2 justify-end items-center sm:gap-[30px] gap-[5px]'>
+              <ul className='flex w-[700px] cust_scrol  px-2 justify-end items-center sm:gap-[30px] gap-[5px]'>
                 <li className='py-1 px-4 rounded-[20px] bg-[#ff5900]'>All</li>
-                <li className='py-1 px-4  text-[#817777] rounded-[20px]'>Chicken</li>
+                <li className='py-1 px-4  text-[#817777] rounded-[20px]'>Chiken</li>
                 <li className='py-1 px-4  text-[#817777] rounded-[20px]'>Seafood</li>
                 <li className='py-1 px-4  text-[#817777] rounded-[20px]'>Pasta</li>
                 <li className='py-1 px-4  text-[#817777] rounded-[20px]'>Rice bowl</li>
@@ -178,13 +199,22 @@ const Dashboard = () => {
             <Foods />
           </div>
         </div>
-      <div className='sm:block hidden'>
+      <div className='right_sidebar w-[320px]   '>
       <InfoCustomer />
       </div>
       </div>
 
 
       {/* modals */}
+
+      {cust && <div className={`realtive    top-0 ${cust ? 'tran_cust right-0 ':'right-[-100%] tran_cust'} h-full flex flex-col fixed w-full sm:w-[420px] bg-white top-0 right-0`}>
+        <div className='flex w-full justify-end'>
+          <p onClick={()=>{
+                setCust(prev =>!prev)
+               }} className='pr-5 h-1 cursor-pointer '>X</p>
+        </div>
+         <InfoCustomer />
+        </div>}
       {state.modal && <Modal>
         <div className='w-[350px] rounded py-6 px-4 bg-white'>
           <div className='py-3'>
@@ -231,8 +261,12 @@ const Dashboard = () => {
         </div>
       </Modal>}
 
-      {state.navig && <div className='bg-white h-[100vh]  absolute w-full flex flex-col items-center  top-0  '>
-        <h1 onClick={menus} className='text-end  cursor-pointer pr-4'>X</h1>
+      {asd && <div className='bg-white h-[100vh]  absolute w-full flex flex-col items-center  top-0  '>
+       <div className='flex w-full justify-end'>
+       <h1 onClick={()=>{
+          setAsd(prev => !prev)
+        }} className='text-end  cursor-pointer pr-4 '>X</h1>
+       </div>
         <ul className='flex flex-col items-center gap-[30px] '>
             <li   className='flex  gap-2 items-center'><img src={require('./images/Vector 179.png')} alt="" /> <span className='  font-semibold text-[#ff5900]'>Home</span></li>
             <li onClick={addOrder} className='flex gap-2 items-center'><img src={require('./images/note.png')} alt="" /> <span className=' text-[#8b8b8b] hover:font-semibold'>Order</span></li>
