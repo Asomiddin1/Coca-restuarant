@@ -4,6 +4,7 @@ const initinalValue = {
   modal: false,
   addNote: false,
   toggle: true,
+  toggleNavbar: true,
   navig: false,
 };
 
@@ -25,6 +26,9 @@ const reducer = (state = initinalValue, action) => {
 
     case "SET_TOGGLE":
       return { ...state, toggle: payload };
+
+    case "SET_TOGGLE_NAVBAR":
+      return { ...state, toggleNavbar: payload };
 
     default:
       return { state };

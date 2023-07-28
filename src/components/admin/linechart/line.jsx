@@ -61,10 +61,11 @@ const Line = () => {
     ],]
     const marker = { visible: true, width: 4, height: 4 };
     return (
-        <div className="w-[630px]">
+        <div className="w-[730px]">
             <ChartComponent
                 id='line-chart'
-                height="220px"
+                height="100%"
+                width='100%'
                 primaryXAxis={{
                     valueType: 'Category'
                 }}

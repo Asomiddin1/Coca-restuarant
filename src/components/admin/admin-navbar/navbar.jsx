@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Context } from '../../../context'
 
 const Navbar = () => {
+
+    let { state, dispatch } = useContext(Context)
+    let toogle = () => {
+        dispatch({ type: 'SET_TOGGLE_NAVBAR', payload: !state.toggleNavbar })
+    }
     return (
         <div className=' z-50 fixed left-0 top-0 right-0 h-[76px] px-6 py-4 bg-white border-b border-neutral-200 justify-between items-center gap-[20px] inline-flex'>
             <div className=" flex gap-6 items-center">
@@ -8,7 +14,7 @@ const Navbar = () => {
                 <div className=" border-r pr-6 border-[#e4e4e4]">
                     <img src={require('./imgs/logo.png')} alt="" />
                 </div>
-                <div className=" text-xl font-semibold leading-8 text-[#19191C]">Dashboard</div>
+                <div className=" text-xl font-semibold leading-8 text-[#19191C]" onClick={toogle}>Dashboard</div>
             </div>
             <div className="justify-start items-start gap-8 flex">
                 <div className="hidden rounded-[50px] border border-neutral-200 justify-start items-start md:flex">
