@@ -98,7 +98,7 @@ body {
   overflow-x: scroll;
 }
 .tran_cust{
-  transition:all 10s;
+  transition: all .3s;
 }
 
 /* query */

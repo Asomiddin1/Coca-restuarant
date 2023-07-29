@@ -19,7 +19,7 @@ const InfoCustomer = () => {
     setVisa(prev => !prev)
   }
   return (
-    <div className='h-[680px] w-full  overflow-y-auto sticky top-[75px] bor_left px-3'>
+    <div className='h-[680px] w-full  overflow-y-auto sticky top-[84px] bor_left px-3'>
       <div className='flex pt-6 gap-10'>
         <button className='py-[6px] px-[50px] rounded-[20px] cust_buy '>Buy</button>
         <button className='text-[#a19999]'>Reservation</button>

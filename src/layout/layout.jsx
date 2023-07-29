@@ -8,12 +8,17 @@ const Layout = () => {
   const [pass, serPass] = useState('')
   const navigate = useNavigate()
 
+
+
   const registr = (e) => {
     e.preventDefault()
+   
+
     if (name == 'a' && pass == '1') {
       navigate('/admin-page')
     } else {
       navigate('/')
+      localStorage.setItem('username', JSON.stringify(name))
     }
   }
   

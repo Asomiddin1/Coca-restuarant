@@ -6,14 +6,16 @@ import Modal from '../modals/modal'
 import OrderDetails from '../info-cutomer/order-details'
 import MiniOrder from '../info-cutomer/mini-order'
 import { Context } from '../../context'
+import { useNavigate } from 'react-router-dom'
 
 const Dashboard = () => {
+  const [user , setUser] = useState(false)
   const { state, dispatch } = useContext(Context)
   const [select, setSselect] = useState(false)
   const [cust, setCust] = useState(false)
   const [asd , setAsd] = useState(false)
   const [search , setSearch] = useState(false)
-
+  const navig = useNavigate()
 
  
 
@@ -28,6 +30,11 @@ const Dashboard = () => {
 
   const addOrder = () => {
     dispatch({ type: 'SET_MODAL' })
+  }
+
+  const logoutUser = ()=>{
+    localStorage.clear()
+    navig('/login')
   }
   return (
     <div>
@@ -49,6 +56,7 @@ const Dashboard = () => {
             <p className='text-[#636262]'>Coca coffeetalk</p>
           </div>
         </div>
+        <div className='w-full flex justify-end pr-4'>
         <div>
           <ul className='sm:flex  nnnn hidden gap-[30px]'>
             <li className='flex gap-2 items-center'><img src={require('./images/Vector 179.png')} alt="" /> <span className='  font-semibold text-[#ff5900]'>Home</span></li>
@@ -125,21 +133,29 @@ const Dashboard = () => {
           </ul>
 
         </div>
-        <div className='flex user_res  px-4 justify-end items-center  pl-[60px]'>
+        <div className='flex user_res  relative px-4 justify-end items-center  pl-[60px]'>
           <div className='flex sm:flex-row  sm:gap-[20px] gap-1 flex-col items-center justify-end'>
           <p>{hours}:{minut}:{secund}</p>
           <p> {day}/{moth}/{year}</p>
           </div>
-        <img className='ml-4' width={50} src={require('../admin/admin-page/Screenshot_6.png')} alt="" />
-
+        <img onClick={()=>{
+          setUser(prev => !prev)
+        }} className='ml-4' width={50} src={require('../admin/admin-page/Screenshot_6.png')} alt="" />
+          {user && <div className='absolute z-[9999] top-[60px] '>
+              <div className='bg-white flex gap-5' >
+                <h1>Profile</h1>
+                 <h1 onClick={logoutUser} className='text-[red]'>logout</h1>
+              </div>
+            </div>}
         </div>
+      </div>
       </div>
 
 
       <div className='flex'>
         <SidbarLeft />
         <div className='w-full '>
-          <div className='sticky top-[79px] bg-white'>
+          <div className='sticky top-[84px] bg-white'>
           <div className='nav_dash w-full flex'>
            <div className='flex dddd justify-start'> 
            <p className='text-[rgb(255,89,0)]  px-4'>Dashboard/Food</p>
@@ -199,7 +215,7 @@ const Dashboard = () => {
             <Foods />
           </div>
         </div>
-      <div className='right_sidebar w-[320px]   '>
+      <div className='right_sidebar w-[350px]   '>
       <InfoCustomer />
       </div>
       </div>
@@ -207,7 +223,7 @@ const Dashboard = () => {
 
       {/* modals */}
 
-      {cust && <div className={`realtive    top-0 ${cust ? 'tran_cust right-0 ':'right-[-100%] tran_cust'} h-full flex flex-col fixed w-full sm:w-[420px] bg-white top-0 right-0`}>
+      {cust && <div className={`realtive  transition-all top-0 ${cust ? ' right-0 ':'right-[-100%] '} h-full flex flex-col fixed w-full sm:w-[390px] bg-white top-0 right-0`}>
         <div className='flex w-full justify-end'>
           <p onClick={()=>{
                 setCust(prev =>!prev)
@@ -231,7 +247,7 @@ const Dashboard = () => {
           </div>
           <p>Add note</p>
           <div className='w-full h-[60px]'>
-            <textarea placeholder='Type your note here...' className='rounded-[50px] w-full h-[inherit]' name="" id="" cols="30" rows="5"></textarea>
+          <textarea placeholder='Type your note here...' className='py-2 px-4 rounded-[50px] w-full h-[60px] max-h-[60px] min-h-[60px] ' name="" id="" cols="30" rows="5"></textarea>
           </div>
           <div className='flex pt-4 '>
             <div className='w-[40%]'>
@@ -247,13 +263,13 @@ const Dashboard = () => {
 
       {state.addNote && <Modal>
         <div className='w-[350px] rounded bg-[white]'>
-          <div>
-            <p>Add note</p>
-            <p className='w-[full]'>Enter order note</p>
-            <div className='w-full h-[60px]'>
-            <textarea placeholder='Type your note here...' className='rounded-[50px] w-full h-[inherit]' name="" id="" cols="30" rows="5"></textarea>
+          <div className='py-2 px-3'>
+            <p className='text-[19px]'>Add note</p>
+            <p className='w-[full] text-[#373737]'>Enter order note</p>
+            <div className='w-full max-h-[60px] h-[60px]'>
+            <textarea placeholder='Type your note here...' className='py-2 px-4 rounded-[50px] w-full h-[60px] max-h-[60px] min-h-[60px] ' name="" id="" cols="30" rows="5"></textarea>
           </div>
-          <div>
+          <div className='py-3'>
             <button className='px-12 rounded-[20px] text-[#f45f1a] py-2 border border-solid border-[#f45f1a]'>Cancel</button>
             <button  className=' ml-[15px] px-9 rounded-[20px] text-[white] py-2 border border-solid bg-[#f45f1a]'>Add to order</button>
             </div>
