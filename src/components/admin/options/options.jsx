@@ -31,7 +31,7 @@ const Options = () => {
             cities: [{
                 city: 'Tashkent',
                 multilocation: [
-                    'Sergeli', 'Marsim Gorkiy', 'Yunisobod', 'Mirzo Ulugbek', 'Chilonzor'
+                    'Sergeli', 'Maksim Gorkiy', 'Yunisobod', 'Mirzo Ulugbek', 'Chilonzor'
                 ]
             },
             {

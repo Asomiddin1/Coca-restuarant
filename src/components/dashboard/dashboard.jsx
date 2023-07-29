@@ -7,6 +7,7 @@ import OrderDetails from '../info-cutomer/order-details'
 import MiniOrder from '../info-cutomer/mini-order'
 import { Context } from '../../context'
 import { useNavigate } from 'react-router-dom'
+import { FoodsApi } from '../../constants'
 
 const Dashboard = () => {
   const [user , setUser] = useState(false)
@@ -193,26 +194,14 @@ const Dashboard = () => {
           </div>
 
           </div>
-          <div className='w-full overflow-scroll h-[100vh] flex flex-wrap pl-6  gap-[60px] py-3'>
-            <Foods />
-            <Foods />
-            <Foods />
-            <Foods />
-            <Foods />
-            <Foods />
-            <Foods />
-            <Foods />
-            <Foods />
-            <Foods />
-            <Foods />
-            <Foods />
-            <Foods />
-            <Foods />
-            <Foods />
-            <Foods />
-            <Foods />
-            <Foods />
-            <Foods />
+          <div className='w-full overflow-scroll h-[100vh] flex flex-wrap px-8   gap-[40px] py-3'>
+            {FoodsApi.map(c =>(
+              <div className='foods w-[200px] h-[200px]'>
+              <img width={200} className=' rounded-[30px] object-contain' src={c.url}  alt="" />
+              <p className='text-center'>{c.text}</p>
+              <p className='text-center text-[#ff743d] font-semibold'>{c.price}</p>
+          </div>
+            ))}
           </div>
         </div>
       <div className='right_sidebar w-[350px]   '>
