@@ -11,7 +11,7 @@ import AdminPage from "./components/admin/admin-page/admin-page";
 import Layout from "./layout/layout";
 import { useEffect } from "react";
 import AdminPin from "./components/admin/admin-pin/admin-pin";
-import Dashboard from "./components/dashboard/dashboard";
+import Dashboard from "./components/dashboard/dashborad-main/dashboard";
 import AdminDashboard from "./components/admin/admin-dashboard/adminDashboard";
 import Pagelayout from "./PageLayout/pagelayout";
 
@@ -27,11 +27,7 @@ function App() {
     }
   }, [])
 
-  const routes = createBrowserRouter(createRoutesFromElements(
-    <Route element={<Pagelayout />}>
 
-    </Route>
-  ))
   return (
     <div className=" h-[100vh] w-full">
       <Routes>
