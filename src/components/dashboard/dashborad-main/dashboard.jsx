@@ -10,7 +10,7 @@ const Dashboard = () => {
       <Navbar />
       <div className='flex '>
         <LeftSidebar />
-        <div>
+        <div className=''>
         <div className="w-[923px]"><span className="text-orange-600 text-xs font-medium leading-[18px]">Dashboard / </span><span className="text-zinc-500 text-xs font-medium leading-[18px]">Food</span></div>
           {/*  */}
           <div className="w-[955px] h-[68px] pr-6 bg-white border-b border-neutral-400 justify-start items-center gap-6 inline-flex">
